@@ -504,6 +504,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Видалити гаманець"),
         "deletingWallet":
             MessageLookupByLibrary.simpleMessage("Видалення гаманця..."),
+        "scrollToContinue": MessageLookupByLibrary.simpleMessage(
+            "Прокрутіть униз, щоб продовжити..."),
         "details": MessageLookupByLibrary.simpleMessage("деталі"),
         "deutscheLanguage": MessageLookupByLibrary.simpleMessage("Німецька"),
         "developerTitle": MessageLookupByLibrary.simpleMessage("Розробник"),
@@ -1163,6 +1165,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Виберіть усі монети Ubiq"),
         "searchFilterSubtitleutxo":
             MessageLookupByLibrary.simpleMessage("Виберіть усі монети UTXO"),
+        "searchFilterSubtitleZHTLC":
+            MessageLookupByLibrary.simpleMessage("Виберіть усі монети ZHTLC"),
         "searchForTicker":
             MessageLookupByLibrary.simpleMessage("Шукати по тікету"),
         "seconds": MessageLookupByLibrary.simpleMessage("с"),

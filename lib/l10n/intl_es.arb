@@ -2659,6 +2659,12 @@
 		"placeholders_order": [],
 		"placeholders": {}
 	},
+	"searchFilterSubtitleZHTLC": "Seleccione todas las monedas ZHTLC",
+	"@searchFilterSubtitleZHTLC": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
 	"tagHRC20": "HRC20",
 	"@tagHRC20": {
 		"type": "text",
@@ -4357,6 +4363,12 @@
 	},
 	"deletingWallet": "Eliminando billetera...",
 	"@deletingWallet": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
+	"scrollToContinue": "Desplácese hasta la parte inferior para continuar...",
+	"@scrollToContinue": {
 		"type": "text",
 		"placeholders_order": [],
 		"placeholders": {}

@@ -499,6 +499,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Eliminar Billetera"),
         "deletingWallet":
             MessageLookupByLibrary.simpleMessage("Eliminando billetera..."),
+        "scrollToContinue": MessageLookupByLibrary.simpleMessage(
+            "Desplácese hasta la parte inferior para continuar..."),
         "details": MessageLookupByLibrary.simpleMessage("detalles"),
         "deutscheLanguage": MessageLookupByLibrary.simpleMessage("Alemán"),
         "developerTitle": MessageLookupByLibrary.simpleMessage("Desarrollador"),
@@ -1156,6 +1158,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Seleccionar todas las monedas Ubiq"),
         "searchFilterSubtitleutxo": MessageLookupByLibrary.simpleMessage(
             "Seleccione todas las monedas UTXO"),
+        "searchFilterSubtitleZHTLC": MessageLookupByLibrary.simpleMessage(
+            "Seleccione todas las monedas ZHTLC"),
         "searchForTicker":
             MessageLookupByLibrary.simpleMessage("Buscar teletipo"),
         "seconds": MessageLookupByLibrary.simpleMessage("s"),

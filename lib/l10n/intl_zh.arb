@@ -2659,6 +2659,12 @@
 		"placeholders_order": [],
 		"placeholders": {}
 	},
+	"searchFilterSubtitleZHTLC": "选择所有ZHTLC货币",
+	"@searchFilterSubtitleZHTLC": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
 	"tagHRC20": "HRC20",
 	"@tagHRC20": {
 		"type": "text",
@@ -4357,6 +4363,12 @@
 	},
 	"deletingWallet": "删除钱包中",
 	"@deletingWallet": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
+	"scrollToContinue": "滚动到底部继续...",
+	"@scrollToContinue": {
 		"type": "text",
 		"placeholders_order": [],
 		"placeholders": {}

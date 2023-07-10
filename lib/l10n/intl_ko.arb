@@ -2659,6 +2659,12 @@
 		"placeholders_order": [],
 		"placeholders": {}
 	},
+	"searchFilterSubtitleZHTLC": "ZHTLC 코인 모두 선택",
+	"@searchFilterSubtitleZHTLC": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
 	"tagHRC20": "HRC20",
 	"@tagHRC20": {
 		"type": "text",
@@ -4357,6 +4363,12 @@
 	},
 	"deletingWallet": "지갑 삭제 중...",
 	"@deletingWallet": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
+	"scrollToContinue": "계속하려면 아래로 스크롤하세요...",
+	"@scrollToContinue": {
 		"type": "text",
 		"placeholders_order": [],
 		"placeholders": {}

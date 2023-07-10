@@ -2643,6 +2643,12 @@
 		"placeholders_order": [],
 		"placeholders": {}
 	},
+	"searchFilterSubtitleZHTLC": "Tüm ZHTLC koinlerini seç",
+	"@searchFilterSubtitleZHTLC": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
 	"tagHRC20": "HRC20",
 	"@tagHRC20": {
 		"type": "text",
@@ -4341,6 +4347,12 @@
 	},
 	"deletingWallet": "Cüzdan siliniyor..",
 	"@deletingWallet": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
+	"scrollToContinue": "Devam etmek için aşağı kaydırın...",
+	"@scrollToContinue": {
 		"type": "text",
 		"placeholders_order": [],
 		"placeholders": {}

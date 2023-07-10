@@ -2659,6 +2659,12 @@
 		"placeholders_order": [],
 		"placeholders": {}
 	},
+	"searchFilterSubtitleZHTLC": "Alle ZHTLC coins auswählen",
+	"@searchFilterSubtitleZHTLC": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
 	"tagHRC20": "HRC20",
 	"@tagHRC20": {
 		"type": "text",
@@ -4357,6 +4363,12 @@
 	},
 	"deletingWallet": "Wallet wird gelöscht...",
 	"@deletingWallet": {
+		"type": "text",
+		"placeholders_order": [],
+		"placeholders": {}
+	},
+	"scrollToContinue": "Scrollen Sie nach unten, um fortzufahren...",
+	"@scrollToContinue": {
 		"type": "text",
 		"placeholders_order": [],
 		"placeholders": {}
