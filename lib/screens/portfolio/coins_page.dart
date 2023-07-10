@@ -1,19 +1,23 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'add_coin_button.dart';
+import 'package:intl/intl.dart';
+import 'package:komodo_dex/packages/z_coin_activation/bloc/z_coin_activation_bloc.dart';
+import 'package:komodo_dex/packages/z_coin_activation/bloc/z_coin_activation_event.dart';
+import 'package:provider/provider.dart';
+
 import '../../../../blocs/coins_bloc.dart';
 import '../../../../blocs/settings_bloc.dart';
 import '../../../../localizations.dart';
 import '../../../../model/cex_provider.dart';
 import '../../../../model/coin_balance.dart';
-import '../portfolio/loading_coin.dart';
 import '../../../../services/mm_service.dart';
-import 'package:provider/provider.dart';
-
+import '../portfolio/loading_coin.dart';
+import 'add_coin_button.dart';
 import 'item_coin.dart';
 
 class CoinsPage extends StatefulWidget {
@@ -42,6 +46,18 @@ class _CoinsPageState extends State<CoinsPage> {
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
     if (mmSe.running) coinsBloc.updateCoinBalances();
+
+    final bloc = BlocProvider.of<ZCoinActivationBloc>(context);
+
+    // Check every 5 seconds if mmSe is running. When it is running, emit the
+    // event [ZCoinActivationStatusRequested] and kill the timer.
+    Timer.periodic(const Duration(seconds: 5), (timer) {
+      if (mmSe.running) {
+        bloc.add(ZCoinActivationStatusRequested());
+        timer.cancel();
+      }
+    });
+
     super.initState();
   }
 
@@ -89,7 +105,7 @@ class _CoinsPageState extends State<CoinsPage> {
                               collapseMode: CollapseMode.pin,
                               centerTitle: true,
                               titlePadding:
-                                  EdgeInsetsDirectional.only(bottom: 4),
+                                  EdgeInsetsDirectional.only(bottom: 10),
                               title: SizedBox(
                                 width: _widthScreen * 0.5,
                                 child: Center(
@@ -405,22 +421,29 @@ class ListCoinsState extends State<ListCoins> {
                     coinsBloc.sortCoins(snapshot.data);
 
                 return SlidableAutoCloseBehavior(
-                  child: ListView.separated(
-                    padding: const EdgeInsets.all(0),
-                    key: const Key('list-view-coins'),
-                    itemCount: _coinsSorted.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ItemCoin(
-                        key: Key('coin-list-${_coinsSorted[index].coin.abbr}'),
-                        mContext: context,
-                        coinBalance: _coinsSorted[index],
-                      );
-                      // }
-                    },
-                    separatorBuilder: (context, _) =>
-                        Divider(color: Theme.of(context).colorScheme.surface),
-                  ),
-                );
+                    child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    ListView.separated(
+                      padding: const EdgeInsets.all(0),
+                      key: const Key('list-view-coins'),
+                      itemCount: _coinsSorted.length,
+                      shrinkWrap: true,
+                      physics: ClampingScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return ItemCoin(
+                          key:
+                              Key('coin-list-${_coinsSorted[index].coin.abbr}'),
+                          mContext: context,
+                          coinBalance: _coinsSorted[index],
+                        );
+                        // }
+                      },
+                      separatorBuilder: (context, _) =>
+                          Divider(color: Theme.of(context).colorScheme.surface),
+                    ),
+                  ],
+                ));
               } else if (snapshot.connectionState == ConnectionState.waiting) {
                 return LoadingCoin();
               } else if (snapshot.data.isEmpty) {
